@@ -19,20 +19,10 @@ class Todo
     @due_date > Date.today
   end
 
-  def status_character
-    if (@status == true)
-      "[X]"
-    else
-      "[ ]"
-    end
-  end
-
   def to_displayable_string
-    if (self.due_today?)
-      "#{self.status_character} #{@text}"
-    else
-      "#{self.status_character} #{@text} #{@due_date}"
-    end
+    status_character = @status ? "[X]" : "[ ]"
+    display_date = self.due_today? ? "" : "#{@due_date}"
+    "#{status_character} #{@text} #{display_date}"
   end
 end
 
