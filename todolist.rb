@@ -8,27 +8,15 @@ class Todo
   end
 
   def overdue?
-    if @due_date < Date.today
-      true
-    else
-      false
-    end
+    @due_date < Date.today
   end
 
   def due_today?
-    if @due_date == Date.today
-      true
-    else
-      false
-    end
+    @due_date == Date.today
   end
 
   def due_later?
-    if @due_date > Date.today
-      true
-    else
-      false
-    end
+    @due_date > Date.today
   end
 
   def status_character
